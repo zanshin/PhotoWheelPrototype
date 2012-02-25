@@ -18,6 +18,7 @@
 @implementation MasterViewController
 
 @synthesize detailViewController = _detailViewController;
+@synthesize data = _data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +36,28 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
     self.title = NSLocalizedString(@"Photo Albums", @"Photo Albums title");
+    
+    // instantiate the data store
+    [self setData:[[NSMutableOrderedSet alloc] init]];
+    [[self data] addObject:@"A Sample Photo Album"];
+    [[self data] addObject:@"Another Sample Album"];
+    
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0
+                                                            inSection:0]
+                                animated:NO
+                          scrollPosition:UITableViewScrollPositionMiddle]; 
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                       target:self 
+                                                       action:@selector(add:)];
+    [[self navigationItem] setRightBarButtonItem:addButton];
+}
+
+- (void)add:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (void)viewDidUnload
@@ -71,7 +90,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    NSInteger count = [[self data] count];
+    return count;
 }
 
 // Customize the appearance of table view cells.
@@ -84,9 +104,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    // Configure the cell.
+    NSString *text = [[self data] objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:text];
     return cell;
 }
 
