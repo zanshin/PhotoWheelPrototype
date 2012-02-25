@@ -3,7 +3,7 @@
 //  PhotoWheelPrototype
 //
 //  Created by Mark Nichols on 2/25/12.
-//  Copyright (c) 2012 Kansas State University. All rights reserved.
+//  Copyright (c) 2012 Mark H. Nichols. All rights reserved.
 //
 
 #import "DetailViewController.h"

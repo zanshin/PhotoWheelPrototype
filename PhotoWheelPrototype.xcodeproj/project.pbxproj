@@ -24,15 +24,15 @@
 		4D703A0214F9654D001CE2D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D703A0414F9654D001CE2D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D703A0614F9654D001CE2D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4D703A0A14F9654D001CE2D6 /* PhotoWheelPrototype-Info.plist */ = {isa = PBXFileReference; path = "PhotoWheelPrototype-Info.plist"; sourceTree = "<group>"; };
+		4D703A0A14F9654D001CE2D6 /* PhotoWheelPrototype-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoWheelPrototype-Info.plist"; sourceTree = "<group>"; };
 		4D703A0C14F9654D001CE2D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D703A0E14F9654D001CE2D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D703A1014F9654D001CE2D6 /* PhotoWheelPrototype-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoWheelPrototype-Prefix.pch"; sourceTree = "<group>"; };
-		4D703A1114F9654D001CE2D6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4D703A1014F9654D001CE2D6 /* PhotoWheelPrototype-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoWheelPrototype-Prefix.pch"; sourceTree = "<group>"; };
+		4D703A1114F9654D001CE2D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D703A1214F9654D001CE2D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4D703A1414F9654D001CE2D6 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		4D703A1414F9654D001CE2D6 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4D703A1514F9654D001CE2D6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		4D703A1714F9654D001CE2D6 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		4D703A1714F9654D001CE2D6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4D703A1814F9654D001CE2D6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4D703A1B14F9654E001CE2D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		4D703A1E14F9654E001CE2D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Kansas State University";
+				ORGANIZATIONNAME = "Mark H. Nichols";
 			};
 			buildConfigurationList = 4D7039F814F9654D001CE2D6 /* Build configuration list for PBXProject "PhotoWheelPrototype" */;
 			compatibilityVersion = "Xcode 3.2";
