@@ -17,6 +17,8 @@
 		4D703A1914F9654D001CE2D6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D703A1814F9654D001CE2D6 /* DetailViewController.m */; };
 		4D703A1C14F9654E001CE2D6 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D703A1A14F9654E001CE2D6 /* MasterViewController.xib */; };
 		4D703A1F14F9654E001CE2D6 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D703A1D14F9654E001CE2D6 /* DetailViewController.xib */; };
+		4D703A2814F97F55001CE2D6 /* NameEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D703A2614F97F55001CE2D6 /* NameEditorViewController.m */; };
+		4D703A2914F97F55001CE2D6 /* NameEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D703A2714F97F55001CE2D6 /* NameEditorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,9 @@
 		4D703A1814F9654D001CE2D6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4D703A1B14F9654E001CE2D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		4D703A1E14F9654E001CE2D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		4D703A2514F97F55001CE2D6 /* NameEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameEditorViewController.h; sourceTree = "<group>"; };
+		4D703A2614F97F55001CE2D6 /* NameEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameEditorViewController.m; sourceTree = "<group>"; };
+		4D703A2714F97F55001CE2D6 /* NameEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameEditorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,9 @@
 				4D703A1214F9654D001CE2D6 /* AppDelegate.m */,
 				4D703A1414F9654D001CE2D6 /* MasterViewController.h */,
 				4D703A1514F9654D001CE2D6 /* MasterViewController.m */,
+				4D703A2514F97F55001CE2D6 /* NameEditorViewController.h */,
+				4D703A2614F97F55001CE2D6 /* NameEditorViewController.m */,
+				4D703A2714F97F55001CE2D6 /* NameEditorViewController.xib */,
 				4D703A1714F9654D001CE2D6 /* DetailViewController.h */,
 				4D703A1814F9654D001CE2D6 /* DetailViewController.m */,
 				4D703A1A14F9654E001CE2D6 /* MasterViewController.xib */,
@@ -160,6 +168,7 @@
 				4D703A0D14F9654D001CE2D6 /* InfoPlist.strings in Resources */,
 				4D703A1C14F9654E001CE2D6 /* MasterViewController.xib in Resources */,
 				4D703A1F14F9654E001CE2D6 /* DetailViewController.xib in Resources */,
+				4D703A2914F97F55001CE2D6 /* NameEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +183,7 @@
 				4D703A1314F9654D001CE2D6 /* AppDelegate.m in Sources */,
 				4D703A1614F9654D001CE2D6 /* MasterViewController.m in Sources */,
 				4D703A1914F9654D001CE2D6 /* DetailViewController.m in Sources */,
+				4D703A2814F97F55001CE2D6 /* NameEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
