@@ -38,8 +38,7 @@
 - (IBAction)cancel:(id)sender
 {
     id<NameEditorViewControllerDelegate> delegate = [self delegate];
-    // test to see if delegate is present is redundant, could be eliminated.
-    if (delegate && [delegate respondsToSelector:@selector(nameEditorViewControllerDidCancel:)]) {
+    if ([delegate respondsToSelector:@selector(nameEditorViewControllerDidCancel:)]) {
         [delegate nameEditorViewControllerDidCancel:self];
     }
     [self dismissModalViewControllerAnimated:YES];
@@ -48,8 +47,7 @@
 -(IBAction)done:(id)sender
 {
     id<NameEditorViewControllerDelegate> delegate = [self delegate];
-    // test to see if delegate is present is redundant, could be eliminated.
-    if (delegate && [delegate respondsToSelector:@selector(nameEditorViewControllerDidFinish:)]) {
+    if ([delegate respondsToSelector:@selector(nameEditorViewControllerDidFinish:)]) {
         [delegate nameEditorViewControllerDidFinish:self];
     }
     [self dismissModalViewControllerAnimated:YES];
