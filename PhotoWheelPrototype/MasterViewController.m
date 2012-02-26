@@ -57,7 +57,12 @@
 
 - (void)add:(id)sender
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    NameEditorViewController *newController = [[NameEditorViewController alloc] initWithDefaultNib];
+    [newController setDelegate:self];
+    [newController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentModalViewController:newController animated:YES];
+
 }
 
 - (void)viewDidUnload
@@ -148,4 +153,15 @@
     self.detailViewController.detailItem = object;
 }
 
+#pragma mark - NameEditorViewControllerDelegate
+
+- (void) nameEditorViewControllerDidFinish:(NameEditorViewController *)controller
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void) nameEditorViewControllerDidCancel:(NameEditorViewController *)controller
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);  
+}
 @end
