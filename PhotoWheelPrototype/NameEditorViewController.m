@@ -12,6 +12,7 @@
 
 @synthesize nameTextField = _nameTextField;
 @synthesize delegate = _delegate;
+@synthesize indexPath = _indexPath;
 
 - (id)initWithDefaultNib
 {

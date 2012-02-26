@@ -53,6 +53,8 @@
                                                        target:self 
                                                        action:@selector(add:)];
     [[self navigationItem] setRightBarButtonItem:addButton];
+    
+    [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
 }
 
 - (void)add:(id)sender
@@ -107,6 +109,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        // Display the detail disclosure button when the table is in edit mode
+        [cell setEditingAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     }
 
     // Configure the cell.
@@ -129,6 +134,18 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NameEditorViewController *newController = [[NameEditorViewController alloc] initWithDefaultNib];
+    [newController setDelegate:self];
+    [newController setEditing:YES];
+    [newController setIndexPath:indexPath];
+    NSString *name = [[self data] objectAtIndex:[indexPath row]];
+    [[newController nameTextField] setText:name];
+    [newController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentModalViewController:newController animated:YES];
 }
 
 /*
@@ -157,7 +174,16 @@
 
 - (void) nameEditorViewControllerDidFinish:(NameEditorViewController *)controller
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSString *newName = [[controller nameTextField] text];
+    if (newName && [newName length] > 0 ) {
+        if ([controller isEditing]) {
+            [[self data] replaceObjectAtIndex:[[controller indexPath] row]
+                                   withObject:newName];
+        } else {
+            [[self data] addObject:newName];
+        }
+        [[self tableView] reloadData];
+    }
 }
 
 - (void) nameEditorViewControllerDidCancel:(NameEditorViewController *)controller
