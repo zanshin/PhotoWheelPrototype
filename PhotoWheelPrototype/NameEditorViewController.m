@@ -13,6 +13,7 @@
 @synthesize nameTextField = _nameTextField;
 @synthesize delegate = _delegate;
 @synthesize indexPath = _indexPath;
+@synthesize defaultNameText = _defaultNameText;
 
 - (id)initWithDefaultNib
 {
@@ -21,6 +22,14 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if ([self isEditing]) {
+        [[self nameTextField] setText:[self defaultNameText]];
+    }
 }
 
 - (void)viewDidUnload
