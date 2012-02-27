@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
 
 @interface MasterViewController () {
@@ -112,6 +111,9 @@
         
         // Display the detail disclosure button when the table is in edit mode
         [cell setEditingAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        
+        // Allow reordering of cells
+        [cell setShowsReorderControl:YES];
     }
 
     // Configure the cell.
@@ -129,11 +131,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        [[self data] removeObjectAtIndex:[indexPath row]];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
     }
+   
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -148,12 +150,14 @@
     [self presentModalViewController:newController animated:YES];
 }
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    [[self data] exchangeObjectAtIndex:[fromIndexPath row]
+                     withObjectAtIndex:[toIndexPath row]];
 }
-*/
+
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -166,8 +170,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = object;
+    NSString *name = [[self data] objectAtIndex:[indexPath row]];
+    [[self detailViewController] setDetailItem:name];
+    
 }
 
 #pragma mark - NameEditorViewControllerDelegate
