@@ -10,6 +10,7 @@
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) NSArray *data;
 - (void)configureView;
 @end
 
@@ -18,6 +19,7 @@
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize masterPopoverController = _masterPopoverController;
+@synthesize data = _data;
 
 #pragma mark - Managing the detail item
 
@@ -54,8 +56,16 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    self.detailDescriptionLabel = nil;
+    
+    CGRect cellFrame = CGRectMake(0, 0, 75, 75);
+    NSInteger count = 10;
+    NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:count];
+    for (NSInteger index = 0; index < count; index++) {
+        WheelViewCell *cell = [[WheelViewCell alloc] initWithFrame:cellFrame];
+        [cell setBackgroundColor:[UIColor blueColor]];
+        [newArray addObject:cell];
+    }
+    [self setData:[newArray copy]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -88,4 +98,17 @@
     self.masterPopoverController = nil;
 }
 
+#pragma mark - WheelViewDataSource methods
+
+- (NSInteger)wheelViewNumberOfCells:(WheelView *)wheelView
+{
+    NSInteger count = [[self data] count];
+    return count;
+}
+
+- (WheelViewCell *)wheelView:(WheelView *)wheelView cellAtIndex:(NSInteger)index
+{
+    WheelViewCell *cell = [[self data] objectAtIndex:index];
+    return cell;
+}
 @end

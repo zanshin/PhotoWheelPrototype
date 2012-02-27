@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3523B214FC177E00EB4658 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3523B114FC177E00EB4658 /* WheelView.m */; };
 		4D703A0314F9654D001CE2D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D703A0214F9654D001CE2D6 /* UIKit.framework */; };
 		4D703A0514F9654D001CE2D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D703A0414F9654D001CE2D6 /* Foundation.framework */; };
 		4D703A0714F9654D001CE2D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D703A0614F9654D001CE2D6 /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D3523B014FC177E00EB4658 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		4D3523B114FC177E00EB4658 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		4D7039FE14F9654D001CE2D6 /* PhotoWheelPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoWheelPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D703A0214F9654D001CE2D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D703A0414F9654D001CE2D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 			children = (
 				4D703A1114F9654D001CE2D6 /* AppDelegate.h */,
 				4D703A1214F9654D001CE2D6 /* AppDelegate.m */,
+				4D3523B014FC177E00EB4658 /* WheelView.h */,
+				4D3523B114FC177E00EB4658 /* WheelView.m */,
 				4D703A1414F9654D001CE2D6 /* MasterViewController.h */,
 				4D703A1514F9654D001CE2D6 /* MasterViewController.m */,
 				4D703A2514F97F55001CE2D6 /* NameEditorViewController.h */,
@@ -184,6 +189,7 @@
 				4D703A1614F9654D001CE2D6 /* MasterViewController.m in Sources */,
 				4D703A1914F9654D001CE2D6 /* DetailViewController.m in Sources */,
 				4D703A2814F97F55001CE2D6 /* NameEditorViewController.m in Sources */,
+				4D3523B214FC177E00EB4658 /* WheelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +311,7 @@
 				4D703A2414F9654E001CE2D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
